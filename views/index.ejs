@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+    <META HTTP-EQUIV="EXPIRES" CONTENT="Mon, 22 Jul 2002 11:12:01 GMT">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nothing to see here</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/codemirror.css">
+
+
+</head>
+<style>
+    .container{
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        justify-content: center;
+        height: 800px;
+        width: 1500px;
+        border: 2px solid black;
+        margin: auto;
+        margin-top :1%;
+        box-shadow: 0px 0px 5px 10px;
+    }
+    .container > h1{
+        color: aqua;
+        text-shadow: 5px;
+    }
+    .cont1{
+        height: 100%;
+        width: 100%;
+        border: 2px solid red;
+        font-size: 20px;
+        font-weight: bold;
+        
+    }
+    .CodeMirror{
+        height: 100%;
+        width: 100%;
+        border: 2px solid red;
+        font-size: 20px;
+        font-weight: bold;
+
+    }
+    .btn{
+        /* width: 45px; */
+        padding: 10px;
+        transition: 0.5s;
+        background-color: aqua;
+        display: block;
+        margin: auto;
+        font-size: large;
+        font-weight: bold;
+        border-radius: 5px;
+        outline: none;
+        box-shadow: 2px 2px 2px black;
+        /* border: none; */
+    }
+    .btn:hover{
+        background-color: aliceblue;
+        cursor: pointer;
+    }
+    .btn:active{
+        transition: 0.1s;
+        box-shadow: 0.5px 0.5px 0.5px black;
+    }
+</style>
+<body>
+    <form action="/creator" method="post">
+
+        <button type="submit" class="btn">Submit</button>
+        <div class="container">
+            <textarea name="code" id="code"  class="cont1"><%= code %></textarea> 
+        
+            <textarea name="coders" id=""  class="cont1" readonly style="background-color: grey; color: white; font-size: 30px;"> <%= reader  %> </textarea> 
+            
+  
+        </div>
+    </form>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/codemirror.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.13.4/mode/clike/clike.js"></script>
+
+<script>
+    const editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    mode: "text/x-java",
+});
+</script>
+</body>
+</html>

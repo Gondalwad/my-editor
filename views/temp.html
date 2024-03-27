@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="prism.min.css">
+    <link rel="stylesheet" href="codeflask.css">
+    <script src="prism.min.js" async></script>
+    <script src="codeflask.js" async></script>
+
+</head>
+<body>
+
+    <body>
+        <div class="my-code-wrappers" data-language="javascript">
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+        <div class="my-code-wrappers" data-language="css"></div>
+        <div class="my-code-wrappers" data-language="ruby"></div>
+      
+        <script>
+          var flask = new CodeFlask;
+          flask.run('#my-code-wrapper');
+
+          flask.onUpdate(function(code) {
+    console.log("User's input code: " + code);
+});
+        </script>
+      </body>
+    
+</body>
+</html>
